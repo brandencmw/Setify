@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: local("PlusJakartaSans"),
+    url("./fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
