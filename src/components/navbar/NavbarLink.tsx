@@ -2,7 +2,9 @@ import React from "react";
 import CSS from "csstype";
 
 const navLinkStyle: CSS.Properties = {
-    margin: "auto 10px"
+    margin: "auto 10px",
+    color: "white",
+    textDecoration: "none"
 }
 
 interface linkText {
@@ -11,7 +13,7 @@ interface linkText {
 
 function NavbarLink(props:linkText) {
     return (
-        <a><h5 style={navLinkStyle}>{props.text}</h5></a>
+        <a href="#" style={navLinkStyle}><h4>{props.text}</h4></a>
     );
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import CSS from "csstype";
 
 const navBrandStyle: CSS.Properties = {
-    fontSize: "20px",
+    fontSize: "24px",
     color: "#1DB954",
 }
 

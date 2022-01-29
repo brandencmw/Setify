@@ -1,6 +1,8 @@
-import React from "react";
-import CSS from "csstype"
-import LoggedOutScreen from "./loggedout/LoggedOutScreen";
+import React from 'react';
+import { useSearchParams } from 'react-router-dom';
+import CSS from 'csstype'
+import LoggedOutScreen from './loggedout/LoggedOutScreen';
+import LoggedInScreen from './loggedin/LoggedInScreen';
 
 
 const bodyStyle: CSS.Properties = {
@@ -14,9 +16,18 @@ const bodyStyle: CSS.Properties = {
 }
 
 function Body() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let token = urlParams.get('token');
+    let disp;
+    if(token != null) {
+        disp = <LoggedInScreen />
+    } else {
+        disp = <LoggedOutScreen />
+    }
+
     return(
         <div style={bodyStyle}>
-            <LoggedOutScreen />
+            {disp}
         </div>
     );
 }
