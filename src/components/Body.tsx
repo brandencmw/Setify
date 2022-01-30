@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSearchParams } from 'react-router-dom';
 import CSS from 'csstype'
 import LoggedOutScreen from './loggedout/LoggedOutScreen';
 import LoggedInScreen from './loggedin/LoggedInScreen';
@@ -10,7 +9,6 @@ const bodyStyle: CSS.Properties = {
     flexGrow: "1",
     display: "flex",
     flexDirection: "row",
-    alignItems: "stretch",
     justifyContent: "center",
     padding: "40px"
 }

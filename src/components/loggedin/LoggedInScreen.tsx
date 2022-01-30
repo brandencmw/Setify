@@ -1,9 +1,12 @@
-import React from "react";
-import PaginatedForm from "./paginatedform/PaginatedForm";
+import React from 'react';
+import CSS from 'csstype'
+import PaginatedForm from './paginatedform/PaginatedForm';
 
 function LoggedInScreen() {
     return(
-        <PaginatedForm />
+        <div className='logged-in'>
+            <PaginatedForm />
+        </div>
     );
 }
 

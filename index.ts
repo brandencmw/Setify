@@ -6,13 +6,14 @@ const querystring = require('querystring');
 const axios = require('axios');
 const cors = require('cors');
 const app = express();
-const authorize = "https://accounts.spotify.com/authorize"
+const authorize = 'https://accounts.spotify.com/authorize'
 const redirectURI = "http://localhost:5000/callback";
 
 
 app.use(express.static(__dirname + '/src/public'));
 app.use(express.json())
 app.use(cors())
+app.use(express.static('public'));
 
 function generateRandomString(length: number) {
   let randomString = ''

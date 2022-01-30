@@ -1,11 +1,13 @@
 import React from "react";
 import MethodQuestion from "./methodquestion/MethodQuestion";
 
+
 function PaginatedForm() {
     return(
-        <div>
+        <form className="container">
+            <h2 className="form-prompt">How would you like to merge your playlists?</h2>
             <MethodQuestion />
-        </div>
+        </form>
     );
 }
 
