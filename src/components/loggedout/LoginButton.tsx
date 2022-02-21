@@ -14,11 +14,6 @@ function LoginButton() {
         setColor("#191616")
     }
 
-    function buttonClick() {
-        console.log('click');
-        axios.get("http://localhost:5000/login");
-    }
-
     const buttonStyle: CSS.Properties = {
         height: "auto",
         width: "auto",
@@ -39,12 +34,10 @@ function LoginButton() {
     }
 
     return(
-        <a href="http://localhost:5000/login">
-            <button style={buttonStyle} onMouseEnter={buttonHover} onMouseLeave={buttonLeave} onClick={buttonClick}>
-                <img src={Logo} style={logoStyle} />
-                <h5 style={{fontSize: "14px"}}>Connect with Spotify</h5>
-            </button>   
-        </a>
+        <a style={buttonStyle} onMouseEnter={buttonHover} onMouseLeave={buttonLeave} href="http://localhost:5000/login">
+            <img src={Logo} style={logoStyle} />
+            <h5 style={{fontSize: "14px"}}>Connect with Spotify</h5>
+        </a> 
     );
 }
 

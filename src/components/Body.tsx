@@ -1,8 +1,7 @@
 import React from 'react';
-import CSS from 'csstype'
+import CSS from 'csstype';
 import LoggedOutScreen from './loggedout/LoggedOutScreen';
 import LoggedInScreen from './loggedin/LoggedInScreen';
-
 
 const bodyStyle: CSS.Properties = {
     color: "white",
@@ -16,8 +15,9 @@ const bodyStyle: CSS.Properties = {
 function Body() {
     const urlParams = new URLSearchParams(window.location.search);
     let token = urlParams.get('token');
+    console.log(token);
     let disp;
-    if(token != null) {
+    if(token != null && token !== '') {
         disp = <LoggedInScreen />
     } else {
         disp = <LoggedOutScreen />
