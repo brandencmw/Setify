@@ -12,13 +12,13 @@ interface buttonProps {
 function FormButton(props:buttonProps) {
     if(props.iconLoc =='left') {
         return(
-            <button className='form-button' onClick={(event) => {
+            <div className='form-button' onClick={(event) => {
                 props.onClick()
                 event.preventDefault();
             }}>
-                <img src={props.icon} alt="" />
+                <img src={props.icon} className='form-button' alt='' />
                 <h5>{props.text}</h5>
-            </button>
+            </div>
         );
     } else {
         return(

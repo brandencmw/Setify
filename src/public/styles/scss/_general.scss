@@ -3,8 +3,20 @@
     src: url('../../fonts/PlusJakartaSans-Bold.ttf');
 }
 
+@font-face {
+    font-family: 'PlusJakartaSansLight';
+    src: url('../../fonts/PlusJakartaSans-ExtraLight.ttf');
+    font-size: 8px;
+}
+
 body, html{
     margin: 0;
     max-width: 100%;
+    height: auto;
+    min-height: auto;
     font-family: 'PlusJakartaSans', sans-serif;
+}
+
+.root {
+    overflow: scroll;
 }

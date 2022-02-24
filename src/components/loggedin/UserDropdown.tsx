@@ -6,7 +6,7 @@ interface userProps {
 }
 
 function UserDropdown(props: userProps) {
-    return(<h1>Welcome, {props.username}</h1>);
+    return(<h5 className='user-dropdown'>Welcome, {props.username}</h5>);
 }
 
 export default UserDropdown;

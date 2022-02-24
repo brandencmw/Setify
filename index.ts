@@ -1,4 +1,5 @@
 import axios from "axios";
+import e from "express";
 
 require("dotenv").config();
 const path = require('path')
@@ -80,28 +81,49 @@ app.get('/callback', (req: any, res: any) => {
   });
 });
 
+function processUserData(data: any) {
+  return {
+    displayName: data.body.display_name, 
+    userID: data.body.id
+  }
+}
+
 app.get('/get-userdata', (req: any, res: any) => {
 
   spotifyAPI.setAccessToken(req.headers['authorization']);
   console.log(spotifyAPI.getAccessToken());
   spotifyAPI.getMe().then((data: any) => {
-      res.send({
-        displayName: data.body.display_name, 
-        userID: data.body.id
-      });
+      res.send(processUserData(data));
   }).catch((err: any) => {
     res.send('user data error: ' + err);
     console.log(err);
   });
 });
 
+
+function processPlaylistData(data: any) {
+  const playlists: Array<any> = [];
+  let imgSrc: string | null;
+  data.forEach((playlist: any) => {
+    console.log(playlist);
+    playlist.images ? imgSrc = playlist.images[0].url : null;
+
+    playlists.push({
+      id: playlist.id,
+      imgSrc: imgSrc,
+      name: playlist.name
+    });
+  });
+
+  return playlists;
+}
+
 app.get('/get-playlists', (req: any, res: any) => {
-  console.log(req.headers);
   spotifyAPI.getUserPlaylists(req.headers['user']).then((data: any) => {
-    console.log(data);
+    const playlists = processPlaylistData(data.body.items);
     res.send({
-      playists: data.body['items']
-    })
+      playlists: playlists
+    });
   }).catch((err: any) => {
     console.log(err);
   });

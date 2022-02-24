@@ -94,7 +94,6 @@ input[type=radio]:checked ~ label {
 
 .logged-in {
   width: 100%;
-  padding: 0 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,11 +101,16 @@ input[type=radio]:checked ~ label {
   justify-content: flex-start;
 }
 
+.user-dropdown {
+  align-self: flex-end;
+}
+
 .form-button {
   display: flex;
   flex-direction: row;
   justify-content: end;
   background-color: transparent;
+  height: 30px;
 }
 
 .form-prompt {
@@ -114,14 +118,82 @@ input[type=radio]:checked ~ label {
   font-size: 32px;
 }
 
+.playlist-question {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.playlist-dropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: baseline;
+  margin-bottom: 40px;
+}
+
+.playlist-dropdown:last-child {
+  margin-bottom: 0;
+}
+
+.ui-widget {
+  font-family: "PlusJakartaSansLight";
+}
+
+.ui-selectmenu-menu {
+  height: 200px;
+  overflow: auto;
+  position: absolute;
+}
+
+.default-dropdown {
+  display: hidden;
+}
+
+#dropdown1-button {
+  width: 30vw;
+  margin-right: 40px;
+}
+
+#dropdown2-button {
+  width: 30vw;
+  margin-right: 40px;
+}
+
+#dropdown3-button {
+  width: 30vw;
+  margin-right: 40px;
+}
+
+#dropdown4-button {
+  width: 30vw;
+  margin-right: 40px;
+}
+
+#dropdown5-button {
+  width: 30vw;
+  margin-right: 40px;
+}
+
 @font-face {
   font-family: "PlusJakartaSans";
   src: url("../../fonts/PlusJakartaSans-Bold.ttf");
 }
+@font-face {
+  font-family: "PlusJakartaSansLight";
+  src: url("../../fonts/PlusJakartaSans-ExtraLight.ttf");
+  font-size: 8px;
+}
 body, html {
   margin: 0;
   max-width: 100%;
+  height: auto;
+  min-height: auto;
   font-family: "PlusJakartaSans", sans-serif;
+}
+
+.root {
+  overflow: scroll;
 }
 
 /*# sourceMappingURL=styles.css.map */
