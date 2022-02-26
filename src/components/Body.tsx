@@ -15,7 +15,6 @@ const bodyStyle: CSS.Properties = {
 function Body() {
     const urlParams = new URLSearchParams(window.location.search);
     let token = urlParams.get('token');
-    console.log(token);
     let disp;
     if(token != null && token !== '') {
         disp = <LoggedInScreen />

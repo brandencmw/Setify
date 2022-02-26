@@ -8,7 +8,7 @@ interface optionProps {
 
 function DropdownOption(props: optionProps) {
     return (
-    <option value={props.optionID} key={props.optionID}>{props.optionText}</option>
+    <option value={props.optionID} key={props.optionID}>{props.optionText.substring(0, 40)}</option>
     );
 }
 

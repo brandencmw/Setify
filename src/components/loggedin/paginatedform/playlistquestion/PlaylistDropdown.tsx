@@ -5,7 +5,7 @@ import TrashIcon from '../../../../public/images/TrashIcon.svg'
 
 interface dropdownProps {
     playlists: Array<any>,
-    dropdownNum: number,
+    selectID: string,
     onRemove: any
 }
 
@@ -13,8 +13,8 @@ function PlaylistDropdown(props:dropdownProps) {
 
     return(
         <div className='playlist-dropdown'>
-            <DropdownCollapse playlists={props.playlists} selectID={props.dropdownNum}/>
-            <FormButton icon={TrashIcon} iconLoc='left' text='' onClick={props.onRemove}/>
+            <DropdownCollapse playlists={props.playlists} selectID={props.selectID}/>
+            <FormButton icon={TrashIcon} iconLoc='left' text='' onClick={props.onRemove} buttonID={props.selectID}/> 
         </div>
     );
 }

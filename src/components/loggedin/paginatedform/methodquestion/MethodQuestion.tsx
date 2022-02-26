@@ -16,7 +16,7 @@ function MethodQuestion() {
                 <li className="method-option"><RadioField text="Union"/></li>
                 <li className="method-option"><RadioField text="Interleaved"/></li>
             </ul>
-            <FormButton text="Next" iconLoc="right" icon={NextIcon} onClick={clickNext}/>
+            <FormButton text="Next" iconLoc="right" icon={NextIcon} onClick={clickNext} buttonID={null}/>
         </>
     );
 }

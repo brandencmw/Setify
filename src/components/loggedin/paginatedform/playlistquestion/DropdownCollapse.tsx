@@ -3,14 +3,14 @@ import DropdownOption from './DropdownOption'
 
 interface dropdownProps {
     playlists: Array<any>,
-    selectID: number,
-    
+    selectID: string,    
 }
 
 function DropdownCollapse(props: dropdownProps) {
 
     function renderUI() {
-        let dropdown = $('#dropdown' + (props.selectID).toString()) as any;
+        let dropdown = $(`#${props.selectID}`) as any;
+        console.log(dropdown);
         dropdown.selectmenu({
             _renderItem: function(ul: any, item: any) {
                 console.log(`ul: ${ul}}`);
@@ -22,23 +22,6 @@ function DropdownCollapse(props: dropdownProps) {
     React.useEffect(() => {
         renderUI();
     });
-
-    function getNumSuffix(num: number) {
-        let suffix: string;
-        if(num == 1) {
-            suffix =  'st'
-        } else if(num == 2) {
-            suffix = 'nd'
-        } else if(num == 3) {
-            suffix = 'rd'
-        } else if(num == 4 || num == 5) {
-            suffix = 'th'
-        } else {
-            suffix = ''
-            console.error(`invalid playlist number: ${num}`);
-        }
-        return suffix;
-    }
 
     $(function () {
         $.widget( "custom.iconselectmenu", $.ui.selectmenu, {
@@ -59,7 +42,7 @@ function DropdownCollapse(props: dropdownProps) {
           }
         });
 
-        let dropdown =  $(`dropdown${props.selectID.toString()}`) as any;
+        let dropdown =  $(`dropdown${props.selectID}`) as any;
       
         dropdown
         .iconselectmenu()
@@ -68,8 +51,8 @@ function DropdownCollapse(props: dropdownProps) {
       });
 
     return(
-        <select className='default-dropdown' name={props.selectID.toString()} id={'dropdown' + props.selectID.toString()} defaultValue='default'>
-            <option disabled hidden selected key={'default'}>{`${props.selectID}${getNumSuffix(props.selectID)} playlist`}</option>
+        <select className='default-dropdown' name={props.selectID} id={props.selectID} defaultValue='default'>
+            <option hidden selected key={'default'}>Select your playlist</option>
             {props.playlists?.map((playlist: any) => {
                 return(<DropdownOption imgSrc={playlist.imgSrc} optionID={playlist.id} optionText={playlist.name} key={playlist.id}/>);
             })}
