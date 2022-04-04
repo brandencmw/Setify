@@ -32,7 +32,8 @@
     "web-vitals": "^2.1.3"
   },
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+    "start": "cd src && node index.ts",
+    "postinstall": "tsc",
     "build": "tsc",
     "install-client": "cd src && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
