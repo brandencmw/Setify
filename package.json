@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-    "build": "cd src && npm run build",
+    "build": "tsc",
     "install-client": "cd src && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
