@@ -8,8 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const uuid_1 = require("uuid"); //Used to generate new playlist title
+const uuid = require("uuid"); //Used to generate new playlist title
 // Dependecies
 require("dotenv").config();
 const express = require("express");
@@ -213,7 +212,7 @@ function extractTrackInfo(playlists) {
 }
 function createPlaylist() {
     let newPlaylist = spotifyAPI
-        .createPlaylist(`New merged playlist ${(0, uuid_1.v4)().substring(0, 10)}`, {
+        .createPlaylist(`New merged playlist ${uuid.v4().substring(0, 10)}`, {
         description: "Thank you for using Setify, we appreciate your support.",
         public: true,
     })
