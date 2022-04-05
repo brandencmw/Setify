@@ -67,7 +67,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/builld/static/index.html");
+  res.sendFile(__dirname + "/build/static/index.html");
 });
 
 // Spotify authenticate route reroutes to this callback on completion
