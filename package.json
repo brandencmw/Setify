@@ -81,6 +81,6 @@
     "uuid": "^8.3.2"
   },
   "engines": {
-    "engines": "14.x"
+    "node": "14.x"
   }
 }
