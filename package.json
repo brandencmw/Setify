@@ -35,7 +35,7 @@
     "start": "node server.js",
     "postinstall": "tsc",
     "build": "tsc",
-    "install-client": "cd src && npm install",
+    "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
     "server": "ts-node index.ts",
