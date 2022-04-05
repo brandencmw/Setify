@@ -1,5 +1,4 @@
-import { v4 as uuid4 } from "uuid"; //Used to generate new playlist title
-
+const uuid = require("uuid"); //Used to generate new playlist title
 // Dependecies
 require("dotenv").config();
 const express = require("express");
@@ -244,7 +243,7 @@ function extractTrackInfo(
 
 function createPlaylist() {
   let newPlaylist = spotifyAPI
-    .createPlaylist(`New merged playlist ${uuid4().substring(0, 10)}`, {
+    .createPlaylist(`New merged playlist ${uuid.v4().substring(0, 10)}`, {
       description: "Thank you for using Setify, we appreciate your support.",
       public: true,
     })
